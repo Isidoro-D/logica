@@ -124,4 +124,93 @@ function calcFrutas() {
     alert('A quantidade de frutas compradas foram de ' + qtdfrutas + ' e o valor foi ' + total + ' reais')
 }
 
-calcFrutas();
+//calcFrutas();
+
+function escolaMedia() {
+    let media;
+
+    media = Number(prompt('Digite a média do aluno'))
+
+    if (media < 5) {
+        alert('Conceito D')
+    } else if (media >= 5 && media < 7) {
+        alert('Conceito C')
+    } else if (media >= 7 && media < 9) {
+        alert('Conceito B')
+    } else if (media >= 9 && media <= 10) {
+        alert('Conceito A')
+    }
+}
+//escolaMedia();
+
+//else if = usa-se quando se tem mais de uma opção
+
+function calcIMC() {
+    let altura, peso, total;
+
+    altura = Number(prompt('Digite sua altura em metros'))
+    peso = Number(prompt('Digite seu peso em quilos'))
+    total = peso / (altura ^ 2)
+
+    if (total < 18.5) {
+        alert('Você está abaixo do peso')
+    } else if (total >= 18.5 && total <= 25) {
+        alert('Você está com peso normal')
+    } else if (total >= 25 && total <= 30) {
+        alert('Você está acima do peso')
+    } else if (total >= 30)
+        alert('Você está obeso')
+}
+
+//calcIMC();
+
+function calcCar() {
+    let category, popular, luxo, km, days, total;
+
+    category = prompt('Digite se deseja a categoria Popular ou de Luxo')
+    days = Number(prompt('Digite quantos dias você alugou o carro'))
+    km = Number(prompt('Digite quantos quilometros você percorreu'))
+    popular
+    luxo
+
+    if (category == 'popular') {
+        if (km > 100) {
+            total = km * 0.1
+        } else {
+            total = km * 0.2
+        }
+        total = total + days * 90
+    } else if (category == 'luxo') {
+        if (km < 200) {
+            total = km * 0.25
+        } else {
+            total = km * 0.3
+        }
+        total = total + days * 150
+    }
+
+    alert('Você escolheu ' + category + ' e seu total pago foi ' + total)
+
+}
+
+//calcCar();
+
+function atividadeFisica() {
+    let hours, points, money;
+
+    hours = Number(prompt('Digite quantas horas você treinou no mês.'))
+    money = 0.05
+
+    if (hours <= 10) {
+        points = 2 * hours
+    } else if (hours > 10 && hours <= 20) {
+        points = 5 * hours
+    } else if (hours > 20) {
+        points = 10 * hours
+    }
+    money = points * money
+
+    alert('Você treinou por ' + hours + ' horas no mês e adquiriu ' + points + ' pontos e ' + money + ' reais')
+}
+
+atividadeFisica();
