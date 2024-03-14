@@ -213,4 +213,66 @@ function atividadeFisica() {
     alert('Você treinou por ' + hours + ' horas no mês e adquiriu ' + points + ' pontos e ' + money + ' reais')
 }
 
-atividadeFisica();
+//atividadeFisica();
+
+function calcIdade() {
+    let ages, addAges, countAges;
+
+    countAges = 1;
+    addAges = 0;
+
+    // While é a mesma coisa de "Enquanto", então "Enquanto ele não fizer o que eu pedi, ele vai continuar refazendo a mesma etapa até ir para a próxima"
+    while (countAges <= 5) {
+        ages = Number(prompt('Digite a idade da ' + countAges + 'º pessoa'));
+        addAges = addAges + ages
+
+        countAges = countAges + 1
+    }
+
+    alert('O total de idade somados são ' + addAges)
+}
+
+//calcIdade();
+
+function idades() {
+    let ages, countAges, adult;
+
+    countAges = 1;
+    adult = 0;
+
+    while (countAges <= 5) {
+        ages = Number(prompt('Digite a idade da ' + countAges + 'º pessoa'));
+        countAges++ //é igual a 'countAges = countAges + 1'
+
+        if (ages >= 18) {
+            adult++
+        }
+    }
+
+    alert('Tem um total de ' + adult + ' pessoas adultas')
+}
+
+//idades();
+
+/* function menorIdade() {
+    let ages, minorAges, countAges;
+
+    minorAges = 0
+    countAges = 1
+
+    ages = Number(prompt('Digite a ' + countAges + 'º idade'));
+    minorAges = ages
+
+    while (countAges <= 4) {
+        ages = Number(prompt('Digite a ' + countAges + 'º idade'));
+
+        if (idade < minorAges) {
+            minorAges = ages
+        }
+        countAges++
+    }
+
+    alert('A menor idade é '+minorAges)
+}
+
+menorIdade(); */
