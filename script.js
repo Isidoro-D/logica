@@ -49,7 +49,7 @@ function calcHaras() {
 
 }
 
-/* calcHaras(); */
+//calcHaras();
 
 function verCNH() {
     let idade;
@@ -64,7 +64,7 @@ function verCNH() {
 
 }
 
-/* verCNH(); */
+//verCNH();
 
 function sellApple() {
     let apples, total;
@@ -81,7 +81,7 @@ function sellApple() {
 
 }
 
-/* sellApple(); */
+//sellApple();
 
 function votos() {
     let today, birth, total;
@@ -226,7 +226,7 @@ function calcIdade() {
         ages = Number(prompt('Digite a idade da ' + countAges + 'º pessoa'));
         addAges = addAges + ages
 
-        countAges = countAges + 1
+        countAges++
     }
 
     alert('O total de idade somados são ' + addAges)
@@ -254,7 +254,7 @@ function idades() {
 
 //idades();
 
-/* function menorIdade() {
+function menorIdade() {
     let ages, minorAges, countAges;
 
     minorAges = 0
@@ -266,13 +266,145 @@ function idades() {
     while (countAges <= 4) {
         ages = Number(prompt('Digite a ' + countAges + 'º idade'));
 
-        if (idade < minorAges) {
+        if (ages < minorAges) {
             minorAges = ages
         }
         countAges++
     }
 
-    alert('A menor idade é '+minorAges)
+    alert('A menor idade é ' + minorAges)
 }
 
-menorIdade(); */
+//menorIdade();
+
+function gatos() {
+    let racao, quilos, gramas, total;
+
+    quilos = Number(prompt('Digite quantos quilos de ração você comprou'));
+
+    quilos = quilos * 1000
+
+    gramas = Number(prompt('Quantas gramas você forneceu para os gatos?'));
+
+    gramas = gramas * 2
+
+    racao = quilos - (gramas * 5);
+
+    total = racao / 1000
+
+    if (total <= 0) {
+        alert('Sua ração acabou')
+    }
+
+    alert('A quantidade de ração que restou foi de ' + total + 'kg de ração');
+}
+
+//gatos();
+
+function anoIdade() {
+    let anoAtual, nasc, idade;
+
+    nasc = Number(prompt('Digite seu ano de Nascimento'))
+    anoAtual = 2024
+
+    idade = anoAtual - nasc
+
+    alert('Você tem ' + idade + ' ano(s)')
+}
+
+//anoIdade();
+
+function whileIdade() {
+    let question, idade, contIdade, somaIdade, media, contMaior;
+
+    question = prompt('Deseja digitar informações de usuários? sim ou não?');
+    idade = 0
+    contMaior = 0
+    contIdade = 0
+    somaIdade = 0
+    media = 0
+
+    while (question == "sim") {
+        idade = Number(prompt('Digite uma idade'));
+        contIdade++
+        somaIdade += idade
+        if (idade >= 21) {
+            contMaior++
+        }
+        question = prompt('Deseja digitar informações de usuários? sim ou não?');
+    }
+    media = somaIdade / contIdade;
+
+    alert('Foram informadas ' + contIdade + ' idade, a média das idades digitadas é ' + media + ' e ' + contMaior + ' possuem 21 ou mais.')
+}
+
+//whileIdade();
+
+function somaVal() {
+    let pergunta, numeros, contNum, mediaNum, menorNum, somaNum;
+
+    numeros = 0
+    menorNum = 0
+    contNum = 0
+    mediaNum = 0
+    somaNum = 0
+    pergunta = prompt('Deseja digitar informações de usuários? sim ou não?');
+
+
+    while (pergunta == "sim") {
+        numeros = Number(prompt('Digite um número.'));
+        contNum++
+        somaNum += numeros
+        if (numeros < menorNum || menorNum == 0) {
+            menorNum = numeros
+        }
+        pergunta = prompt('Deseja digitar informações de usuários? sim ou não?');
+    }
+
+    mediaNum = somaNum / contNum;
+
+    alert('Foram informados ' + somaNum + ' números, a média desses números é ' + mediaNum + ' e o menor número é ' + menorNum)
+}
+
+//somaVal();
+
+function cadastro() {
+    let question, name, age, sex, ageOlder = 0, womanYng, older, youngster = 0, somaAge = 0, countAge = 0, mediaAge = 0, mens30 = 0, womans18 = 0;
+
+    question = prompt('Deseja digitar informações de usuários? sim ou não?');
+
+    while (question == "sim") {
+        name = prompt('Digite seu nome');
+        age = Number(prompt('Digite sua idade'));
+        sex = prompt('Digite seu sexo. (feminino ou masculino)');
+        countAge++
+        somaAge += age
+
+        if (age > ageOlder) {
+            ageOlder = age;
+            older = name;
+        }
+
+        if (sex == "feminino" && age < youngster || youngster == 0) {
+            youngster = age;
+            womanYng = name;
+        }
+
+        if (sex == "masculino" && age >= 30) {
+            mens30++
+        }
+
+        if (sex == "feminino" && age <= 18) {
+            womans18++
+        }
+
+        mediaAge = somaAge / countAge
+
+        question = prompt('Deseja digitar informações de usuários? sim ou não?');
+    }
+
+
+    alert('O nome da pessoa mais velha é ' + older + ', a mulher mais jovem se chama ' + womanYng + ' a média das idades é ' + mediaAge + ', tem um total de ' + mens30 + ' homens com 30 anos ou mais e há '+womans18+' mulheres com 18 anos ou menos.')
+}
+
+//cadastro();
